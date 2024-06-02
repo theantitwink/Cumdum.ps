@@ -1,0 +1,15 @@
+<!--
+ * Directory.Build.props
+ *     Created: 2024-06-01T22:06:22-04:00
+ *    Modified: 2024-06-01T22:06:23-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <Import Project="Sdk.props" Sdk="DgmjrSdk" />
+  <PropertyGroup>
+    <EnableCentralPackageVersions>false</EnableCentralPackageVersions>
+  </PropertyGroup>
+</Project>

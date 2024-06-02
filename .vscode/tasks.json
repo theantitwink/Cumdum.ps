@@ -1,0 +1,70 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Short.IO.Web (Local)",
+      "command": "dotnet build",
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "args": [
+        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj",
+        "-c:Local"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Watch Run Short.IO.Web",
+      "command": "dotnet",
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build Short.IO.Web (Docker)",
+      "command": "dotnet",
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "args": [
+        "build",
+        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj",
+        "-c:Docker"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "devtunnel - Short.IO.Web",
+      "command": "devtunnel",
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "args": [
+        "host",
+        "shortioweb.use",
+        "--allow-anonymous"
+      ],
+      "problemMatcher": "$msCompile",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿@page "/"
+@namespace Short.IO.Web.Server.Pages
+@using Short.IO.Web.Server.Components
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<component type="typeof(App)" render-mode="Server" />
