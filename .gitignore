@@ -288,3 +288,4 @@ __pycache__/
 /samples/WebApplicationSample/logs/
 *.old/
 bot/
+[lL]ogs/

@@ -1,0 +1,37 @@
+{
+  "AccessDeniedPath": "/access-denied",
+  "AppType": "Blazor",
+  "AzureRegion": "TryAutoDetect",
+  "CallbackPath": "/authentication/login-callback",
+  "ClaimsIssuer": "https://cumdum.ps",
+  "ClientId": "eaf8a327-5c98-46d2-883e-813cdca611ae",
+  "contentMediaType": "application/json",
+  "DefaultFallbackRoute": "/",
+  "DefaultUserFlow": "$(AzureAdB2C:SignUpSignInPolicyId)",
+  "Domain": "cumdum.ps",
+  "EditProfilePolicyId": "b2c_1_editprofile",
+  "EnablePiiLogging": true,
+  "ErrorUri": "/error",
+  "GetClaimsFromUserInfoEndpoint": false,
+  "InitialScopes": [
+    "https://cumdum.ps/api.access"
+  ],
+  "Instance": "https://login.cumdum.ps/",
+  "MapInboundClaims": true,
+  "RemoteSignOutPath": "/signout/${AzureAdB2C:SignUpSignInPolicyId}",
+  "ResetPasswordPolicyId": "b2c_1_resetpassword",
+  "ResponseType": "code id_token",
+  "SaveTokens": true,
+  "Scope": [
+    "https://cumdum.ps/api.access",
+    "openid",
+    "profile",
+    "offline_access"
+  ],
+  "SignedOutCallbackPath": "/home",
+  "SignedOutRedirectUri": "https://cumdum.ps/",
+  "SignInScheme": "OpenIdConnect",
+  "SignUpSignInPolicyId": "b2c_1_susi",
+  "TenantId": "5ed1088b-796c-440f-a459-edc49bb42560" //,
+  // "TenantId": "cumdumps.onmicrosoft.com"
+}

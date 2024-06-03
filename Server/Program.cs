@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
+using Serilog;
+
 using Short.IO.Web.Server.Components;
 
 using MsidConstants = Microsoft.Identity.Web.Constants;
@@ -7,6 +9,16 @@ using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets<Program>();
+
+builder.Host.UseSerilog(
+    (hostingContext, loggerConfiguration) =>
+    {
+        loggerConfiguration.ReadFrom
+            .Configuration(hostingContext.Configuration)
+            .Enrich.FromLogContext()
+            .WriteTo.Console();
+    }
+);
 
 // Add services to the container.
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
