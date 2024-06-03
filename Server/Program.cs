@@ -1,10 +1,36 @@
+using Microsoft.Extensions.DependencyInjection;
+
 using Short.IO.Web.Server.Components;
 
+using MsidConstants = Microsoft.Identity.Web.Constants;
+using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddUserSecrets<Program>();
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+
+builder.Services.AddMsalAuthentication(options =>
+{
+    builder.Configuration.Bind(MsidConstants.AzureAdB2C, options.ProviderOptions.Authentication);
+    options.ProviderOptions.DefaultAccessTokenScopes.Add("https://graph.microsoft.com/User.Read");
+    options.ProviderOptions.DefaultAccessTokenScopes.Add(
+        "https://graph.microsoft.com/User.ReadBasic.All"
+    );
+    options.ProviderOptions.DefaultAccessTokenScopes.Add(
+        "https://graph.microsoft.com/User.ReadWrite"
+    );
+    options.ProviderOptions.DefaultAccessTokenScopes.Add(
+        "https://graph.microsoft.com/User.ReadWrite.All"
+    );
+    options.ProviderOptions.DefaultAccessTokenScopes.Add(
+        "https://graph.microsoft.com/User.Read.All"
+    );
+    options.ProviderOptions.DefaultAccessTokenScopes.Add(
+        "https://graph.microsoft.com/User.ReadWrite.All"
+    );
+});
 
 var app = builder.Build();
 
@@ -21,7 +47,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
 app.Run();

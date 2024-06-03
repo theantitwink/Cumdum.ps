@@ -1,13 +1,15 @@
-﻿@inherits LayoutComponentBase
+﻿@namespace Short.IO.Web.Server.Components.Layout
+@inherits LayoutComponentBase
 
+<CascadingAuthenticationState>
 <div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
-        <div class="top-row px-4">
-
+        <div class="top-row px-4 justify-content-end">
+          <LoginPartial />
         </div>
 
         <article class="content px-4">
@@ -21,3 +23,4 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+</CascadingAuthenticationState>

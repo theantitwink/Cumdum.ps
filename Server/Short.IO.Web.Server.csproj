@@ -4,6 +4,29 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <UserSecretsId>cumdum.ps</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Client/Short.IO.Web.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazor.Bootstrap" Version="[2.2.0,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="[3.0.0-preview.1,)" />
+    <PackageReference Include="Dgmjr.AzureAd" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Dgmjr.AspNetCore.Mvc" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Dgmjr.AspNetCore.Http.Services" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="[8.0.6,)" />
+    <PackageReference Include="Serilog.AspNetCore" Version="[8.0.1,)" />
+    <PackageReference Include="Serilog.Enrichers.AspNetCore.HttpContext" Version="[1.0.1,)" />
+    <PackageReference Include="Serilog.Enrichers.Demystifier" Version="[1.0.2,)" />
+    <PackageReference Include="Serilog.Exceptions" Version="[8.4.0,)" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="[8.0.0,)" />
+    <PackageReference Include="Serilog.Sinks.AzureApp" Version="[3.1.0,)" />
+  </ItemGroup>
 
 </Project>

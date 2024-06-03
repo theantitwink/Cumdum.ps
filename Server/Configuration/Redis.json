@@ -1,0 +1,21 @@
+{
+  "$schema": "https://jsonschema.xyz/schemas/Dgmjr.Redis.Extensions.RedisCacheOptions.schema",
+  "ConfigurationOptions": {
+    "AbortOnConnectFail": true,
+    "AllowAdmin": true,
+    "ClientName": "The Backroom",
+    "DefaultDatabase": 0,
+    // "Ssl":  true,
+    // "SslHost": "redis-12287.c325.us-east-1-4.ec2.cloud.redislabs.com:12287",
+    // "UseSsl": true,
+    "EndPoints": [
+      {
+        "Host": "redis-12287.c325.us-east-1-4.ec2.cloud.redislabs.com",
+        "Port": 12287,
+        "AddressFamily": "InterNetwork"
+      }
+    ],
+    "User": "jsonschema"
+  },
+  "UseRedis": true
+}

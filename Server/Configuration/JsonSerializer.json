@@ -1,0 +1,13 @@
+{
+  "$schema": "https://jsonschema.xyz/schemas/JsonSerializerOptions.schema",
+  "PropertyNamingPolicy": "CamelCase",
+  "DictionaryKeyPolicy": "CamelCase",
+  "PropertyNameCaseInsensitive": true,
+  "DefaultIgnoreCondition": "WhenWritingNull",
+  "Converters": [
+    "System.Text.Json.Serialization.JsonStringEnumConverter, System.Text.Json"
+  ],
+  "AllowTrailingCommas": true,
+  "NumberHandling": 5,
+  "ReferenceHandler": "Preserve"
+}
