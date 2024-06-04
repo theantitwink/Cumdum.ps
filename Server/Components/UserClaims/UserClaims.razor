@@ -2,6 +2,7 @@
 @namespace Short.IO.Web.Server.Components
 @inherits UserClaimsBase
 <AuthorizeView>
+  <Authorized>
     <h4>
         @context.User.Identity.Name has successfully signed-in
     </h4>
@@ -23,4 +24,9 @@
             }
         </tbody>
     </table>
+  </Authorized>
+  <NotAuthorized>
+    <p>You are not logged in!</p>
+    <a href="/login" class="btn btn-primary">Click here to log in!</a>
+  </NotAuthorized>
 </AuthorizeView>

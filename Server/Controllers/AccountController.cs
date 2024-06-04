@@ -15,8 +15,13 @@ public class AccountController : ApiControllerBase
     private const string MicrosoftIdentity = nameof(MicrosoftIdentity);
     private const string Account = nameof(Account);
     private new const string SignIn = nameof(SignIn);
+    private new const string SignOut = nameof(SignOut);
 
     [HttpGet(nameof(Login))]
     public IActionResult Login() =>
         base.RedirectToAction(SignIn, Account, new { Area = MicrosoftIdentity });
+
+    [HttpGet(nameof(Logout))]
+    public IActionResult Logout() =>
+        base.RedirectToAction(SignOut, Account, new { Area = MicrosoftIdentity });
 }

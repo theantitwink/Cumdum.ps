@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.Identity.Web" Version="[3.0.0-preview.1,)" />
     <PackageReference Include="Dgmjr.AzureAd" Version="[0.0.1-Local,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Mvc" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Dgmjr.AspNetCore.Razor" Version="[0.0.1-Local,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Http.Services" Version="[0.0.1-Local,)" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="[8.0.6,)" />
     <PackageReference Include="Serilog.AspNetCore" Version="[8.0.1,)" />
