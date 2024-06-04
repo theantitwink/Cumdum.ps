@@ -22,6 +22,7 @@ builder.Host.UseSerilog(
 
 // Add services to the container.
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+builder.Services.AddProgressiveWebApp();
 
 builder.Services.AddMsalAuthentication(options =>
 {

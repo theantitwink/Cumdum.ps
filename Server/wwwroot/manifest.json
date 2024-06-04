@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gh.cdn13.net/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
+  "name": "Cumdum.ps",
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en-us",
+  "orientation": "any",
+  "start_url": "/",
+  "id": "cumdum.ps",
+  "background_color": "red",
+  "short_name": "Cumdum.ps",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "any",
+      "src": "/img/milk.gif",
+      "type": "image/gif"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/img/milk.gif",
+      "type": "image/gif"
+    },
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/img/milk.gif",
+      "type": "image/gif"
+    }
+  ]
+}
