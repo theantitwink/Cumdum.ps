@@ -6,6 +6,7 @@ using Short.IO.Web.Server.Components;
 
 using MsidConstants = Microsoft.Identity.Web.Constants;
 using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
+using Microsoft.AspNetCore.Components.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets<Program>();
@@ -21,7 +22,11 @@ builder.Host.UseSerilog(
 );
 
 // Add services to the container.
-builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+
+builder.Services
+    .AddRazorComponents()
+    .AddInteractiveServerComponents()
+    .AddInteractiveWebAssemblyComponents();
 builder.Services.AddProgressiveWebApp();
 
 builder.Services.AddMsalAuthentication(options =>
@@ -60,6 +65,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode()
+    .AddInteractiveWebAssemblyRenderMode();
 
 app.Run();

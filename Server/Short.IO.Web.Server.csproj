@@ -8,20 +8,22 @@
     <UserSecretsId>cumdum.ps</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <ProjectReference Include="../Client/Short.IO.Web.Client.csproj" />
-  </ItemGroup>
+  </ItemGroup> -->
 
   <ItemGroup>
     <PackageReference Include="Blazor.Bootstrap" Version="[2.2.0,)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="[8.0.6,)" />
-    <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="[8.0.6,)" />
-    <PackageReference Include="Microsoft.Identity.Web" Version="[3.0.0-preview.1,)" />
-    <PackageReference Include="Dgmjr.AzureAd" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Dgmjr.AspNetCore.Http.Services" Version="[0.0.1-Local,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Mvc" Version="[0.0.1-Local,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Razor" Version="[0.0.1-Local,)" />
-    <PackageReference Include="Dgmjr.AspNetCore.Http.Services" Version="[0.0.1-Local,)" />
+    <PackageReference Include="Dgmjr.AzureAd" Version="[0.0.1-Local,)" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="[8.0.6,)" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="[3.0.0-preview.1,)" />
     <PackageReference Include="Serilog.AspNetCore" Version="[8.0.1,)" />
     <PackageReference Include="Serilog.Enrichers.AspNetCore.HttpContext" Version="[1.0.1,)" />
     <PackageReference Include="Serilog.Enrichers.Demystifier" Version="[1.0.2,)" />
@@ -30,5 +32,9 @@
     <PackageReference Include="Serilog.Sinks.AzureApp" Version="[3.1.0,)" />
     <PackageReference Include="WebEssentials.AspNetCore.PWA" Version="1.0.85" />
   </ItemGroup>
+
+  <!-- <ItemGroup>
+    <Reference Include="@(ProjectReference->'../Client/bin/$(Configuration)/$(TargetFramework)/%(Filename).dll'" />
+  </ItemGroup> -->
 
 </Project>
