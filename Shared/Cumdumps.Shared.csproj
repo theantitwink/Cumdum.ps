@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0</TargetFrameworks>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Enumerations.CodeGenerator" IncludeAssets="Analyzers;Build" ExcludeAssets="Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime" PrivateAssets="All" />
+        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Enumerations.CodeGenerator.Runtime" />
+        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Abstractions" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="icon.png" PackagePath="icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Using Include="Dgmjr.Abstractions" />
+    </ItemGroup>
+</Project>

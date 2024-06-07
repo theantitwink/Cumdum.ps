@@ -11,5 +11,6 @@
   <Import Project="Sdk.props" Sdk="DgmjrSdk" />
   <PropertyGroup>
     <EnableCentralPackageVersions>false</EnableCentralPackageVersions>
+    <DelaySign>true</DelaySign>
   </PropertyGroup>
 </Project>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace Short.IO.Web.Server.Components;
+namespace Cumdumps.Server.Components;
 
 /// <summary>
 /// Base class for UserClaims component.

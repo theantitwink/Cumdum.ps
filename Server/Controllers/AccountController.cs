@@ -7,7 +7,7 @@
  *     License: MIT (https://opensource.org/licenses/MIT)
  */
 
-namespace Short.IO.Web.Server.Controllers;
+namespace Cumdumps.Server.Controllers;
 
 [ApiController]
 public class AccountController : ApiControllerBase

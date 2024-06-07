@@ -7,7 +7,7 @@
  *     License: MIT (https://opensource.org/licenses/MIT)
  */
 
-namespace Short.IO.Web.Server.Components.Pages;
+namespace Cumdumps.Server.Components.Pages;
 
 public partial class Counter
 {

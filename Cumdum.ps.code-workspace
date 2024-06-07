@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../dgmjr-io/src/Web"
+		},
+		{
+			"path": "../MyGayCard.com"
+		},
+		{
+			"path": "../../dgmjr-io/src/Bots/Short.IO/Short.IO.Bot"
+		}
+	],
+	"settings": {}
+}

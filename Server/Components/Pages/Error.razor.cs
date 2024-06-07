@@ -9,7 +9,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace Short.IO.Web.Server.Components.Pages;
+namespace Cumdumps.Server.Components.Pages;
 
 public partial class Error
 {

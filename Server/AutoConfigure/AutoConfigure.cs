@@ -11,3 +11,4 @@
 [assembly: HostingStartup(typeof(AutomaticAzureAdConfigurator))]
 [assembly: HostingStartup(typeof(MvcAutoConfigurator))]
 [assembly: HostingStartup(typeof(HttpServicesOptionsAutoConfigurator))]
+[assembly: HostingStartup(typeof(MicrosoftGraphAutoConfigurator))]

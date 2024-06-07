@@ -1,0 +1,15 @@
+{
+  "$schema": "https://jsonschema.xyz/schemas/Dgmjr.Web.DownstreamApis.DownstreamApis.schema",
+  "contentMediaType": "application/json",
+  "MicrosoftGraph": {
+    "BaseUrl": "https://graph.microsoft.com/v1.0",
+    "RequestedScopes": [
+      "https://graph.microsoft.com/.default"
+    ],
+    "AzureAdB2CExtensionsApplicationId": "9a2cc3b7-a991-4f3d-ae7a-0c24a2c7fe55",
+    "AzureAdB2CExtensionsObjectId": "b20d85af-ef19-4615-b474-c82606e5b2d6",
+    "ClientId": "${AzureAdB2C:ClientId}",
+    "TenantId": "${AzureAdB2C:TenantId}",
+    "ClientObjectId": "095d576e-32de-4f05-9aea-56240b51811b"
+  }
+}

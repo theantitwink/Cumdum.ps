@@ -4,21 +4,22 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build Short.IO.Web (Local)",
-      "command": "dotnet build",
+      "label": "Build Cumdumps (Local)",
+      "command": "dotnet",
       "type": "shell",
       "group": "build",
       "presentation": {
         "reveal": "silent"
       },
       "args": [
-        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj",
+        "build",
+        "${workspaceFolder}/Server/Cumdumps.Server.csproj",
         "-c:Local"
       ],
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Watch Run Short.IO.Web",
+      "label": "Watch Run Cumdumps",
       "command": "dotnet",
       "type": "shell",
       "group": "build",
@@ -29,12 +30,12 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj"
+        "${workspaceFolder}/Server/Cumdumps.Server.csproj"
       ],
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Build Short.IO.Web (Docker)",
+      "label": "Build Cumdumps (Docker)",
       "command": "dotnet",
       "type": "shell",
       "group": "build",
@@ -43,13 +44,13 @@
       },
       "args": [
         "build",
-        "${workspaceFolder}/Server/Short.IO.Web.Server.csproj",
+        "${workspaceFolder}/Server/Cumdumps.Server.csproj",
         "-c:Docker"
       ],
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "devtunnel - Short.IO.Web",
+      "label": "devtunnel - Cumdumps",
       "command": "devtunnel",
       "type": "shell",
       "group": "build",

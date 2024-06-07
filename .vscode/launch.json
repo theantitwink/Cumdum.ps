@@ -5,13 +5,38 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Short.IO.Web (Local)",
+      "name": "Launch Cumdumps (Local)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "Build Short.IO.Web (Local)",
-      "program": "${workspaceFolder}/bin/Local/net9.0/Short.IO.Web.dll",
+      "preLaunchTask": "Build Cumdumps (Local)",
+      "program": "${workspaceFolder}/Server/bin/Local/net8.0/Cumdumps.Server.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Site",
+      "cwd": "${workspaceFolder}/Server",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "justMyCode": false,
+      "symbolOptions": {
+        "searchPaths": [],
+        "searchMicrosoftSymbolServer": true,
+        "searchNuGetOrgSymbolServer": true
+      }
+    },
+    {
+      "name": "Launch Cumdumps (Local - No Build)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/Server/bin/Local/net8.0/Cumdumps.Server.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Server",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",

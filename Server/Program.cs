@@ -1,33 +1,41 @@
-using Microsoft.Extensions.DependencyInjection;
-
-using Serilog;
-
-using Short.IO.Web.Server.Components;
-
-using MsidConstants = Microsoft.Identity.Web.Constants;
-using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
+using Cumdumps.Server.Components;
+using Microsoft.ApplicationInsights.WindowsServer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Server;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog;
+using MsidConstants = Microsoft.Identity.Web.Constants;
+using TokenValidatedContext = Microsoft.AspNetCore.Authentication.OpenIdConnect.TokenValidatedContext;
+using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddUserSecrets<Program>();
+builder.Configuration.AddUserSecrets<Cumdumps.Server.Controllers.AccountController>();
 
 builder.Host.UseSerilog(
     (hostingContext, loggerConfiguration) =>
     {
-        loggerConfiguration.ReadFrom
-            .Configuration(hostingContext.Configuration)
+        loggerConfiguration
+            .ReadFrom.Configuration(hostingContext.Configuration)
             .Enrich.FromLogContext()
             .WriteTo.Console();
     }
 );
 
+builder.Services.AddBlazorBootstrap();
+
+builder.Services.ConfigureAll<MicrosoftIdentityOptions>(options =>
+    options.Events.OnTokenValidated += GetTwitterUsername
+);
+
 // Add services to the container.
 
-builder.Services
-    .AddRazorComponents()
+builder
+    .Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 builder.Services.AddProgressiveWebApp();
+builder.Services.AddMicrosoftIdentityConsentHandler();
 
 builder.Services.AddMsalAuthentication(options =>
 {
@@ -70,3 +78,20 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode();
 
 app.Run();
+
+async Task GetTwitterUsername(TokenValidatedContext context)
+{
+    using var scope = context.HttpContext.RequestServices.CreateScope();
+
+    var logger = scope.ServiceProvider.GetRequiredService<
+        ILogger<MicrosoftGraphAutoConfigurator>
+    >();
+
+    var userGuid = context.Principal.GetObjectId();
+
+    var services = scope.ServiceProvider;
+    var graphClientOptions = services.GetRequiredService<IOptions<AzureAdB2CGraphOptions>>().Value;
+    var graphClient = services.GetRequiredService<GraphServiceClient>();
+
+    var graphUser = await graphClient.Users[userGuid].Request().GetAsync();
+}

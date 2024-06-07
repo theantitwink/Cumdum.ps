@@ -1,0 +1,3 @@
+[submodule "IdentityExperienceFramework"]
+	path = IdentityExperienceFramework
+	url = https://github.com/theantitwink/cumdum.ps-active-directory-b2c-custom-policy-starterpack
