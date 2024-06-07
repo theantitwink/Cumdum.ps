@@ -1,10 +1,17 @@
+using Azure.Identity;
 using Cumdumps.Server.Components;
 using Microsoft.ApplicationInsights.WindowsServer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Server;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Serilog.AspNetCore;
+using Serilog.Core;
+using Serilog.Events;
+using Serilog.Sinks.SystemConsole;
+using Serilog.Sinks.SystemConsole.Themes;
 using MsidConstants = Microsoft.Identity.Web.Constants;
 using TokenValidatedContext = Microsoft.AspNetCore.Authentication.OpenIdConnect.TokenValidatedContext;
 using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
@@ -21,6 +28,21 @@ builder.Host.UseSerilog(
             .WriteTo.Console();
     }
 );
+
+#if AZURE
+builder
+    .Services.AddDataProtection()
+    .SetApplicationName(nameof(Cumdumps))
+    .SetDefaultKeyLifetime(TimeSpan.FromDays(30))
+    .PersistKeysToAzureBlobStorage(
+        new Uri("https://mystore.blob.core.windows.net/keyrings/master.xml"),
+        new DefaultAzureCredential()
+    )
+/*.ProtectKeysWithAzureKeyVault(
+    new Uri("https://myvault.vault.azure.net/keys/MasterEncryptionKey"),
+    new DefaultAzureCredential()
+)*/;
+#endif
 
 builder.Services.AddBlazorBootstrap();
 

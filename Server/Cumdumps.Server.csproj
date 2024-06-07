@@ -8,6 +8,7 @@
     <UserSecretsId>cumdum.ps</UserSecretsId>
     <NoWarn>$(NoWarn);RZ9992;NU1504;CS8002</NoWarn>
     <BuildFromSource>false</BuildFromSource>
+    <DefineConstants Condition="'$(Azure)' == 'true'">$(DefineConstants);AZURE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="[1.11.3,)" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.DataProtection.Blobs" Version="[1.3.4,)" />
     <PackageReference Include="Blazor.Bootstrap" Version="[2.2.0,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Http.Services" Version="[0.0.1-Local,)" />
     <PackageReference Include="Dgmjr.AspNetCore.Mvc" Version="[0.0.1-Local,)" />

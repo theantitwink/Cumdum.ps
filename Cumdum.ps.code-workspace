@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "../../dgmjr-io/src/Bots/Short.IO/Short.IO.Bot"
+		},
+		{
+			"path": "../../dgmjr-io/src/Types/Extensions"
 		}
 	],
 	"settings": {}
