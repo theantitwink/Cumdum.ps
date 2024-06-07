@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "../../dgmjr-io/src/Types/Extensions"
+		},
+		{
+			"path": "../../dgmjr-io/src/AspNetCore"
 		}
 	],
 	"settings": {}

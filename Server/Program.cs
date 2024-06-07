@@ -44,6 +44,8 @@ builder
 )*/;
 #endif
 
+builder.Services.AddScoped<Dgmjr.Blazor.Components.CookiesJS>();
+
 builder.Services.AddBlazorBootstrap();
 
 builder.Services.ConfigureAll<MicrosoftIdentityOptions>(options =>

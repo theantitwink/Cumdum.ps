@@ -1,0 +1,21 @@
+@namespace Cumdumps.Server.Components
+
+<Modal @ref="_18OrOlderModal" title="Are you supposed to be here?" UseStaticBackdrop="true" CloseOnEscape="false">
+  <BodyTemplate>
+        <div class="accept-policy">
+          This site contains adult content and is intended only for users who are at least 18 years of age.
+          Are you at least 18 years of age?
+        </div>
+        <img src="/img/icon.png" alt="Cumdum.ps" />
+  </BodyTemplate>
+  <FooterTemplate>
+    <Button Color="ButtonColor.Danger" @onclick="GetMeOutOfHere">
+      <Icon Name="IconName.ExclamationOctagonFill" />
+        No, I'm not!
+    </Button>
+    <Button Color="ButtonColor.Primary">
+      <Icon Name="IconName.CheckCircleFill" />
+        Yes, I am at least 18 years of age.
+    </Button>
+  </FooterTemplate>
+</Modal>
