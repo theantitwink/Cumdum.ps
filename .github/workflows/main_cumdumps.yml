@@ -3,6 +3,10 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - cumdumps
 
+concurrency:
+  group: CD
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -22,11 +26,18 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
 
+      - name: Set up NuGet for dgmjr.nuget.software
+        uses: dgmjr-actions/setup-nuget@main
+        with:
+          key: ${{ secrets.FEEDZ_IO_TOKEN }}
+          source: ${{ vars.FEEDZ_IO_ENDPOINT_URL }}
+          name: dgmjr.nuget.software
+
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build Server/Cumdumps.Server.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish Server/Cumdumps.Server.csproj  -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
