@@ -7,26 +7,62 @@
   "orientation": "any",
   "start_url": "/",
   "id": "cumdum.ps",
-  "background_color": "red",
+  "background_color": "black",
+  "theme_color": "pink",
+  "shortcuts": [
+    {
+      "name": "Cumdum.ps",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/img/icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "My Links",
+      "url": "/my-links",
+      "icons": [
+        {
+          "src": "/img/icon-my-links.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "My Profile",
+      "url": "/my-profile",
+      "icons": [
+        {
+          "src": "/img/icon-my-profile.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
   "short_name": "Cumdum.ps",
   "icons": [
     {
       "purpose": "any",
       "sizes": "any",
-      "src": "/img/milk.gif",
-      "type": "image/gif"
+      "src": "/img/icon.png",
+      "type": "image/png"
     },
     {
       "purpose": "any",
       "sizes": "512x512",
-      "src": "/img/milk.gif",
-      "type": "image/gif"
+      "src": "/img/icon-512.png",
+      "type": "image/png"
     },
     {
       "purpose": "any",
       "sizes": "192x192",
-      "src": "/img/milk.gif",
-      "type": "image/gif"
+      "src": "/img/icon-192.png",
+      "type": "image/png"
     }
   ]
 }
