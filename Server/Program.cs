@@ -35,7 +35,7 @@ builder
     .SetApplicationName(nameof(Cumdumps))
     .SetDefaultKeyLifetime(TimeSpan.FromDays(30))
     .PersistKeysToAzureBlobStorage(
-        new Uri("https://mystore.blob.core.windows.net/keyrings/master.xml"),
+        new Uri("https://cumdumps.blob.core.windows.net/keyrings/master.xml"),
         new DefaultAzureCredential()
     )
 /*.ProtectKeysWithAzureKeyVault(
