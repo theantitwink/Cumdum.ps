@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cumdumps</name>
+    </assembly>
+    <members>
+        <member name="T:Cumdumps.Pages.UserClaimsBase">
+            <summary>
+            Base class for UserClaims component.
+            Retrieves claims present in the ID Token issued by Azure AD.
+            </summary>
+        </member>
+        <member name="M:Cumdumps.Pages.UserClaimsBase.GetClaimsPrincipalData">
+            <summary>
+            Retrieves user claims for the signed-in user.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

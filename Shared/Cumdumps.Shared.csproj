@@ -4,14 +4,18 @@
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Enumerations.CodeGenerator" IncludeAssets="Analyzers;Build" ExcludeAssets="Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime" PrivateAssets="All" />
+        <!-- <PackageReference Version="0.0.1-Local" Include="Dgmjr.Enumerations.CodeGenerator" IncludeAssets="Analyzers;Build" ExcludeAssets="Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime" PrivateAssets="All" />
         <PackageReference Version="0.0.1-Local" Include="Dgmjr.Enumerations.CodeGenerator.Runtime" />
-        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Abstractions" />
+        <PackageReference Version="0.0.1-Local" Include="Dgmjr.Abstractions" /> -->
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="icon.png" PackagePath="icon.png" />
     </ItemGroup>
     <ItemGroup>
-      <Using Include="Dgmjr.Abstractions" />
+      <SupportedPlatform Include="Linux" />
+      <SupportedPlatform Include="Windows" />
+      <SupportedPlatform Include="macOS" />
+      <SupportedPlatform Include="browser" />
     </ItemGroup>
 </Project>

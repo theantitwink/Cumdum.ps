@@ -7,16 +7,16 @@
 			"path": "../../dgmjr-io/src/Web"
 		},
 		{
-			"path": "../MyGayCard.com"
-		},
-		{
-			"path": "../../dgmjr-io/src/Bots/Short.IO/Short.IO.Bot"
-		},
-		{
-			"path": "../../dgmjr-io/src/Types/Extensions"
-		},
-		{
 			"path": "../../dgmjr-io/src/AspNetCore"
+		},
+		{
+			"path": "../../dgmjr-io/src/cdn13"
+		},
+		{
+			"path": "../../dgmjr-io/src/Shared/DgmjrSdk"
+		},
+		{
+			"path": "../Cumdum.ps.old"
 		}
 	],
 	"settings": {}

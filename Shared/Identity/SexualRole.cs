@@ -7,26 +7,89 @@
  *     License: MIT (https://opensource.org/licenses/MIT)
  */
 
-namespace Cumdumps.Identity.Enums;
-
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-[GenerateEnumerationRecordStruct("SexualRole", "Cumdump.Identity")]
-public enum SexualRole
+namespace Cumdumps.Identity
 {
-    [Display(Name = "Top (breeder)", Description = "You breed cumudmps.")]
-    [Guid("654f1256-4118-45e6-84f6-db96368a28d0")]
-    [Uri("https://cumdum.ps/role/breeder")]
-    Top = 1,
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using Enums;
 
-    [Display(Name = "Bottom (cumdump)", Description = "You're a cumdump.")]
-    [Guid("5baf7958-2e12-4a4b-9a76-6c5fc01c2903")]
-    [Uri("https://cumdum.ps/role/bottom")]
-    Bottom = 2,
+    namespace Enums
+    {
+        // [GenerateEnumerationRecordStruct("SexualRole", "Cumdump.Identity")]
+        public enum SexualRole
+        {
+            [Display(
+                Name = "Unknown",
+                Description = "You haven't made a selection.",
+                ShortName = "?"
+            )]
+            Unknown = 0,
 
-    [Display(Name = "Versatile (goes both ways)", Description = "You do both.")]
-    [Guid("f9056e48-193a-4af2-9bc0-59e59bc1f845")]
-    [Uri("https://cumdum.ps/role/vers")]
-    Versatile = 3
+            [Display(Name = "Top", Description = "You breed cumudmps.", ShortName = "top")]
+            Top = 1,
+
+            [Display(Name = "Bottom", Description = "You're a cumdump.", ShortName = "btm")]
+            Bottom = 2,
+
+            [Display(Name = "Versatile", Description = "You do both.", ShortName = "vers")]
+            Versatile = 3
+        }
+    }
+
+    public static class SexualRoleExtensions
+    {
+        public static string ToFriendlyString(this Enums.SexualRole role)
+        {
+            return role switch
+            {
+                Enums.SexualRole.Top => "Top",
+                Enums.SexualRole.Bottom => "Bottom",
+                Enums.SexualRole.Versatile => "Versatile",
+                _ => "Unknown"
+            };
+        }
+    }
+
+    public record struct SexualRole(Enums.SexualRole role)
+    {
+        public string Name =>
+            role switch
+            {
+                Enums.SexualRole.Unknown => "Unknown",
+                Enums.SexualRole.Top => "Top",
+                Enums.SexualRole.Bottom => "Bottom",
+                Enums.SexualRole.Versatile => "Versatile",
+                _ => "Unknown"
+            };
+
+        public string Description =>
+            role switch
+            {
+                Enums.SexualRole.Unknown => "You haven't made a selection.",
+                Enums.SexualRole.Top => "You breed cumudmps.",
+                Enums.SexualRole.Bottom => "You're a cumdump.",
+                Enums.SexualRole.Versatile => "You do both.",
+                _ => "Unknown"
+            };
+
+        public Guid Guid =>
+            role switch
+            {
+                Enums.SexualRole.Unknown => Guid.Empty,
+                Enums.SexualRole.Top => new Guid("654f1256-4118-45e6-84f6-db96368a28d0"),
+                Enums.SexualRole.Bottom => new Guid("5baf7958-2e12-4a4b-9a76-6c5fc01c2903"),
+                Enums.SexualRole.Versatile => new Guid("f9056e48-193a-4af2-9bc0-59e59bc1f845"),
+                _ => Guid.Empty
+            };
+
+        public Uri Uri =>
+            role switch
+            {
+                Enums.SexualRole.Unknown => new Uri("https://cumdum.ps/role/unknown"),
+                Enums.SexualRole.Top => new Uri("https://cumdum.ps/role/breeder"),
+                Enums.SexualRole.Bottom => new Uri("https://cumdum.ps/role/bottom"),
+                Enums.SexualRole.Versatile => new Uri("https://cumdum.ps/role/vers"),
+                _ => new Uri("https://cumdum.ps/role/unknown")
+            };
+    }
 }

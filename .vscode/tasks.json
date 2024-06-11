@@ -13,7 +13,7 @@
       },
       "args": [
         "build",
-        "${workspaceFolder}/Server/Cumdumps.Server.csproj",
+        "${workspaceFolder}/Server/Cumdumps.csproj",
         "-c:Local"
       ],
       "problemMatcher": "$msCompile"
@@ -30,7 +30,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/Server/Cumdumps.Server.csproj"
+        "${workspaceFolder}/Server/Cumdumps.csproj"
       ],
       "problemMatcher": "$msCompile"
     },
@@ -44,7 +44,7 @@
       },
       "args": [
         "build",
-        "${workspaceFolder}/Server/Cumdumps.Server.csproj",
+        "${workspaceFolder}/Server/Cumdumps.csproj",
         "-c:Docker"
       ],
       "problemMatcher": "$msCompile"
@@ -59,7 +59,7 @@
       },
       "args": [
         "host",
-        "shortioweb.use",
+        "cumdumps.use",
         "--allow-anonymous"
       ],
       "problemMatcher": "$msCompile",

@@ -6,8 +6,8 @@ WORKDIR /src/cumdum.ps/
 
 # Copy everything in this project and build app
 COPY . ./
-RUN dotnet restore Server/Cumdumps.Server.csproj
-RUN dotnet publish Server/Cumdumps.Server.csproj -c:Release -o /app -p:IsBuildingInDocker=true
+RUN dotnet restore Server/Cumdumps.csproj
+RUN dotnet publish Server/Cumdumps.csproj -c:Release -o /app -p:IsBuildingInDocker=true
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:latest
@@ -21,4 +21,4 @@ ENV PORT 8080
 EXPOSE 8080
 
 # Start the app
-ENTRYPOINT ["dotnet", "Cumdumps.Server.dll", "--urls:http://localhost:8080"]
+ENTRYPOINT ["dotnet", "Cumdumps.dll", "--urls:http://localhost:8080"]

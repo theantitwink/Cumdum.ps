@@ -14,15 +14,19 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DelaySign>true</DelaySign>
   </PropertyGroup>
-
+<!--
   <ItemGroup>
     <Reference Include="@(ProjectReference->'%(RelativeDir)bin/$(Configuration)/$(TargetFramework)/%(Filename).dll')" Condition="Exists(@(ProjectReference->'%(RelativeDir)bin/$(Configuration)/$(TargetFramework)/%(Filename).dll'))" />
     <Reference Include="@(ProjectReference->'%(RelativeDir)bin/$(Configuration)/netstandard2.0/%(Filename).dll')" Condition="!Exists(@(ProjectReference->'%(RelativeDir)bin/$(Configuration)/$(TargetFramework)/%(Filename).dll'))" />
-  </ItemGroup>
+  </ItemGroup> -->
+
+  <!-- <ItemGroup>
+    <ProjectReference Remove="@(ProjectReference)" />
+  </ItemGroup> -->
 
   <Import Project="Sdk.targets" Sdk="DgmjrSdk" />
-  <Target Name="PushDgmjrNuGet" AfterTargets="Pack">
+  <!-- <Target Name="PushDgmjrNuGet" AfterTargets="Pack">
     <CallTarget Targets="PushDgmjrNuGetSoftware" />
   </Target>
-  <Target Name="GetPackageMetadata" AfterTargets="$(GetPackageMetadataDependsOn)" />
+  <Target Name="GetPackageMetadata" AfterTargets="$(GetPackageMetadataDependsOn)" /> -->
 </Project>

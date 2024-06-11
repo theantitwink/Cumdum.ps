@@ -12,5 +12,6 @@
   <PropertyGroup>
     <EnableCentralPackageVersions>false</EnableCentralPackageVersions>
     <DelaySign>true</DelaySign>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 </Project>
